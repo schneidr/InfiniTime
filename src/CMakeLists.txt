@@ -417,6 +417,7 @@ list(APPEND SOURCE_FILES
         displayapp/screens/settings/SettingWakeUp.cpp
         displayapp/screens/settings/SettingDisplay.cpp
         displayapp/screens/settings/SettingSteps.cpp
+        displayapp/screens/settings/SettingQuietTime.cpp
 
         ## Watch faces
         displayapp/icons/bg_clock.c
@@ -594,6 +595,7 @@ set(INCLUDE_FILES
         displayapp/screens/HeartRate.h
         displayapp/screens/Motion.h
         displayapp/screens/Timer.h
+        displayapp/screens/settings/SettingQuietTime.h
         drivers/St7789.h
         drivers/SpiNorFlash.h
         drivers/SpiMaster.h
