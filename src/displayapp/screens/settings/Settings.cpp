@@ -60,8 +60,8 @@ std::unique_ptr<Screen> Settings::CreateScreen2() {
 std::unique_ptr<Screen> Settings::CreateScreen3() {
 
   std::array<Screens::List::Applications, 4> applications {{
+    {Symbols::clock, "Quiet Time", Apps::SettingQuietTime},
     {Symbols::list, "About", Apps::SysInfo},
-    {Symbols::none, "None", Apps::None},
     {Symbols::none, "None", Apps::None},
     {Symbols::none, "None", Apps::None},
   }};
