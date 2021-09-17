@@ -15,7 +15,6 @@ namespace Pinetime {
       public:
         SettingQuietTime(Pinetime::Applications::DisplayApp* app, Pinetime::Controllers::Settings& settingsController);
         ~SettingQuietTime() override;
-        bool Refresh() override;
         void OnButtonEvent(lv_obj_t* obj, lv_event_t event);
 
       private:

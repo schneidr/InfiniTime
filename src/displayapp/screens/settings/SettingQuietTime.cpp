@@ -110,7 +110,8 @@ std::unique_ptr<Screen> SettingQuietTime::CreateScreen1() {
   lv_label_set_text(txtFromMDown, "-");
 
   //return std::make_unique<Screens::Screen>(0, 2, app, settingsController);
-  return std::unique_ptr<Screen>(new Screens::Screen(0, 2, app, settingsController));
+  return std::make_unique<Screens::SettingQuietTime>(0, 2, app, container1);
+  //return std::unique_ptr<Screen>(new Screens::Screen(0, 2, app, settingsController));
 }
 
 std::unique_ptr<Screen> SettingQuietTime::CreateScreen2() {
@@ -142,7 +143,8 @@ std::unique_ptr<Screen> SettingQuietTime::CreateScreen2() {
   lv_label_set_text_fmt(labelTo, "From");
   lv_obj_align(labelTo, lv_scr_act(), LV_ALIGN_IN_TOP_MID, 0, -60);
 
-  return std::make_unique<Screens::Screen>(1, 2, app, settingsController);
+  return std::make_unique<Screens::SettingQuietTime>(1, 2, app, settingsController, container1);
+  //return std::make_unique<Screens::Screen>(1, 2, app, settingsController);
 }
 
 void SettingQuietTime::OnButtonEvent(lv_obj_t* obj, lv_event_t event) {
@@ -173,8 +175,4 @@ void SettingQuietTime::OnButtonEvent(lv_obj_t* obj, lv_event_t event) {
     }
     lv_label_set_text_fmt(timeFrom, "%02d:%02d", fromHoursToSet, fromMinutesToSet);
   }
-}
-
-bool SettingQuietTime::Refresh() {
-  return running;
 }
