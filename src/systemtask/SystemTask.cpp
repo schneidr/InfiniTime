@@ -393,6 +393,7 @@ void SystemTask::UpdateMotion() {
     return;
 
   if (stepCounterMustBeReset) {
+    motionController.RotateStepHistory();
     motionSensor.ResetStepCounter();
     stepCounterMustBeReset = false;
   }

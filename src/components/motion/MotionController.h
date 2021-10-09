@@ -25,7 +25,7 @@ namespace Pinetime {
         return z;
       }
       uint32_t NbSteps() const {
-        return nbSteps;
+        return nbSteps[6];
       }
       bool ShouldWakeUp(bool isSleeping);
 
@@ -40,8 +40,10 @@ namespace Pinetime {
 
       void Init(Pinetime::Drivers::Bma421::DeviceTypes types);
 
+      void RotateStepHistory();
+
     private:
-      uint32_t nbSteps;
+      uint32_t nbSteps[7];
       int16_t x;
       int16_t y;
       int16_t z;

@@ -6,7 +6,7 @@ void MotionController::Update(int16_t x, int16_t y, int16_t z, uint32_t nbSteps)
   this->x = x;
   this->y = y;
   this->z = z;
-  this->nbSteps = nbSteps;
+  this->nbSteps[6] = nbSteps;
 }
 
 bool MotionController::ShouldWakeUp(bool isSleeping) {
@@ -39,5 +39,11 @@ void MotionController::Init(Pinetime::Drivers::Bma421::DeviceTypes types) {
     case Drivers::Bma421::DeviceTypes::BMA421: this->deviceType = DeviceTypes::BMA421; break;
     case Drivers::Bma421::DeviceTypes::BMA425: this->deviceType = DeviceTypes::BMA425; break;
     default: this->deviceType = DeviceTypes::Unknown; break;
+  }
+}
+
+void MotionController::RotateStepHistory() {
+  for (int i = 0; i < 6; i++) {
+    this->nbSteps[i] = this->nbSteps[i+1];
   }
 }
