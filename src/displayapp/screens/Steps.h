@@ -27,7 +27,7 @@ namespace Pinetime {
 
         lv_obj_t* lSteps;
         lv_obj_t* lStepsIcon;
-        lv_obj_t* stepsArc;
+        lv_obj_t* stepsChart;
 
         uint32_t stepsCount;
 

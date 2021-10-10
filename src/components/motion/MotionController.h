@@ -27,6 +27,9 @@ namespace Pinetime {
       uint32_t NbSteps() const {
         return nbSteps[6];
       }
+      uint32_t NbSteps(int day) const {
+        return dummyValues[day];
+      }
       bool ShouldWakeUp(bool isSleeping);
 
       void IsSensorOk(bool isOk);
@@ -44,6 +47,7 @@ namespace Pinetime {
 
     private:
       uint32_t nbSteps[7];
+      uint32_t dummyValues[7] = { 3458, 7893, 2489, 11589, 5479, 7892, 1243 };
       int16_t x;
       int16_t y;
       int16_t z;
